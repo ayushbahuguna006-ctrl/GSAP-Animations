@@ -10,7 +10,11 @@ function App() {
 
   return (
     <>
-      
+      <div>
+        <div className="box bg-red-500 h-10">
+
+        </div>
+      </div>
     </>
   )
 }
