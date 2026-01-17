@@ -14,16 +14,15 @@ function App() {
     const boxes=gsap.utils.toArray(scrollRef.current.children);
      boxes.forEach(box => {
   gsap.to(box,{
-    x:1000,
+    x:500,
     rotation:360,
-    duration:2,
     borderRadius:'50%',
     scale:1.5,
-    ease:'power1.inOut',
+    ease:'power2.out',
     scrollTrigger:{
       trigger:box,
       start:'bottom bottom',
-      end:'top 10%',
+      end:'top 30%',
       scrub:true
     },
     
@@ -31,6 +30,17 @@ function App() {
 
   })
  });
+ gsap.fromTo(".line1",{
+  opacity:0
+ },{
+  opacity:1,
+  scrollTrigger:{
+    trigger:'.line1',
+    start:'bottom bottom',
+    end:'top 10%',
+    scrub:true
+  }
+ })
   })
 
     
@@ -41,8 +51,8 @@ function App() {
     <>
     <div className='min-h-screen bg-black'></div>
      <div ref={scrollRef}className="p-20 space-y-20">
-        <div className='bg-red-500 h-10 w-10'></div>
-        <div className='bg-orange-500 h-10 w-10'></div>
+        <div className='line1 bg-red-500 h-10 w-10 flex justify-center items-center text-white'>HII</div>
+        <div className='line1 bg-orange-500 h-10 w-10 flex justify-center items-center text-white'>YO</div>
 
      </div>
      <div className='min-h-screen bg-black'>
