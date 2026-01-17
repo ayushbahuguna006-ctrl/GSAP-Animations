@@ -40,6 +40,22 @@ function App() {
     end:'top 10%',
     scrub:true
   }
+ });
+ gsap.fromTo(".line2",{
+    opacity:0,
+    y:20
+
+ },{
+  opacity:1,
+  y:0,
+  delay:0.5,
+  duration:0.5,
+  scrollTrigger:{
+    trigger:'.line2',
+    start:'bottom bottom',
+    end:'top 10%',
+    scrub:true
+  }
  })
   })
 
@@ -49,12 +65,14 @@ function App() {
 
   return (
     <>
+    <div className='text-center p-4 text-black font-mono text-2xl'><h1>GSAP ANIMATIONS</h1></div>
     <div className='min-h-screen bg-black'></div>
      <div ref={scrollRef}className="p-20 space-y-20">
         <div className='line1 bg-red-500 h-10 w-10 flex justify-center items-center text-white'>HII</div>
         <div className='line1 bg-orange-500 h-10 w-10 flex justify-center items-center text-white'>YO</div>
-
+       
      </div>
+      <div className='line2 font-mono p-10'>This section is part of a GSAP animation tutorial where we explore how scroll-based animations work in React. Using GSAP and ScrollTrigger, elements smoothly animate as they enter the viewport, helping you understand transforms, easing, and scrub behavior in a practical way.</div>
      <div className='min-h-screen bg-black'>
 
      </div>
